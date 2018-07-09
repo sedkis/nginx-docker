@@ -12,5 +12,5 @@ services:
     httpbin:
         image: kennethreitz/httpbin
         expose:
-            - 80:80/tcp
+            - 80
 
