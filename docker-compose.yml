@@ -1,14 +1,13 @@
 version: '3'
 services:
-    frontend:
-        build: frontend
+    nginx:
+        image: nginx
         ports:
-            - 443:443/tcp
             - 80:80/tcp
-        environment:
-            - CERTBOT_EMAIL=sabae@uw.edu
         depends_on:
             - httpbin
+        volumes: 
+            - ./nginx:/etc/nginx/conf.d/
     httpbin:
         image: kennethreitz/httpbin
         expose:
